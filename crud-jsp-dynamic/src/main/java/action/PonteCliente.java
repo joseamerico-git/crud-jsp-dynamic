@@ -138,7 +138,7 @@ public class PonteCliente {
     }
 
     public void lista(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.print(("rota ponte lista"));
+        System.out.print(("rota ponte lista.... LISTA()"));
         req.setAttribute("token", req.getParameter("token"));
         req.setAttribute("login", req.getParameter("login"));
 
@@ -174,7 +174,45 @@ public class PonteCliente {
     }
 
     public void listaByName(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.print(("\n rota ponte lista por nome"));
+    	
+    	
+    	
+    	/*
+        
+        
+	@GetMapping
+	public ResponseEntity<List<Cliente>> getAllClientes(){
+		List<Cliente> clientes = clienteRepository.findAll();
+		return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
+	}
+	
+	@GetMapping("/list")
+	public ResponseEntity<List<Cliente>> getClienteByNome(@RequestParam String nome) {
+		
+		System.out.println("nome "+nome);
+		List<Cliente> clientes = new ArrayList<>();
+		if(!nome.isBlank()||!nome.isEmpty()||nome!=null) {
+			
+			
+			clientes = clienteRepository.findByNomeContaining(nome.trim());
+			if(clientes.isEmpty()) {
+				Cliente c = clienteRepository.getClienteByNome(nome);
+				clientes.add(c);
+			}
+			if(clientes.isEmpty()) {
+				clientes = clienteRepository.findAll();
+			}
+		
+		}
+		
+		return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
+	
+	}
+        */
+    	
+    	
+    	
+        System.out.print(("\n rota ponte lista por nome ..."));
         req.setAttribute("token", req.getParameter("token"));
         req.setAttribute("login", req.getParameter("login"));
         req.setAttribute("nome",req.getParameter("nome"));
@@ -183,7 +221,7 @@ public class PonteCliente {
         //String aux = nome.replace(' ','+');
         //System.out.print(aux);
 
-        URL url = new URL("http://localhost:8081/clientes/list?nome="+req.getAttribute("nome"));
+        URL url = new URL("http://localhost:8081/clientes/list?nome="+nome);
         URLConnection urlConnection = url.openConnection();
 
         urlConnection.setDoOutput(true); // if you need to write to the URL
@@ -218,7 +256,7 @@ public class PonteCliente {
         }.getType();
         ArrayList<Cliente> clientes = gson.fromJson(content.toString(), listType);
         req.setAttribute("clientes", clientes);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/api/api-editar-cliente.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/api/api-listar-cliente.jsp");
         dispatcher.forward(req, resp);
 
     }

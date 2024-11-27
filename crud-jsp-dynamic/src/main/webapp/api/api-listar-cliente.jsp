@@ -117,7 +117,7 @@
           crossorigin="anonymous"></script>
   
          
-      <script src="./scripts/validaCliente.js">
+      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/scripts/validaCliente.js"></script>
            
   
   

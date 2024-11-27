@@ -12,9 +12,8 @@
 	src="${pageContext.request.contextPath}/resources/bootstrap-5.1.3-dist/css/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/style.css" />
-<title>Crud Servlets e JSP dashboard</title>
-<link rel="icon"
-	href="${pageContext.request.contextPath}/resources/imagens/icon.webp" />
+
+
 
 
 </head>

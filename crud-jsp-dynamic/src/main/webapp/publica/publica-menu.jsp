@@ -18,6 +18,10 @@
 
 	<div id="op" class="op">
 		<h1>Dashboard</h1>
+		<span id="bem-vindo">Bem vindo! <%
+		out.print(request.getAttribute("login"));
+		%>!
+		</span>
 		<form class="fcc-btn" id="meu-form" action="controladora" method="GET">
 			<c:if test="${token != null}">
 			   <jsp:include page="/publica/publica-links-api.jsp"/>

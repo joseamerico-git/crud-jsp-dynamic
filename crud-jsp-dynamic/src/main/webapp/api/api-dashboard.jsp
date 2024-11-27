@@ -4,7 +4,11 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<jsp:include page="/publica/publica-head.jsp" />
+<head>
+<jsp:include page="/publica/publica-estilos.jsp" />
+<jsp:include page="/publica/publica-icon.jsp" />
+<title>Crud JSP Maven - Dashboard</title>
+</head>
 
 <body>
 
@@ -15,10 +19,7 @@
 
 	<c:if test="${token != null}">
 
-		<span id="bem-vindo">Bem vindo! <%
-		out.print(request.getAttribute("login"));
-		%>!
-		</span>
+		
 
 		<jsp:include page="/publica/publica-menu.jsp" />
 	</c:if>
