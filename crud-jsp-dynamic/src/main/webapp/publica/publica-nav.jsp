@@ -14,7 +14,8 @@
 
                   <li><a href="#">Contato</a></li>
 
-                  <li><a href="${pageContext.request.contextPath}/api/api-login.jsp">Entrar/Registrar</a></li>
+                  <li><a href="${pageContext.request.contextPath}/api/api-login.jsp">Entrar</a></li>
+                  <li><a href="${pageContext.request.contextPath}/api/api-cadastrar-usuario.jsp">Registrar</a></li>
 
           </ul>
           </nav>

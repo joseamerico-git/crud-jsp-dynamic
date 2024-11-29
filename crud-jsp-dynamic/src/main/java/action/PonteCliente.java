@@ -29,7 +29,7 @@ public class PonteCliente {
 
 
     public void cadastrar(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    		System.out.println("Requisicao ");
         try {
             // URL da API
             URL url = new URL("http://localhost:8081/clientes");
@@ -142,7 +142,7 @@ public class PonteCliente {
         req.setAttribute("token", req.getParameter("token"));
         req.setAttribute("login", req.getParameter("login"));
 
-        URL url = new URL("http://localhost:8081/clientes");
+        URL url = new URL("http://localhost:8081/clientes?nome=");
         URLConnection urlConnection = url.openConnection();
 
         urlConnection.setDoOutput(true); // if you need to write to the URL
@@ -221,7 +221,7 @@ public class PonteCliente {
         //String aux = nome.replace(' ','+');
         //System.out.print(aux);
 
-        URL url = new URL("http://localhost:8081/clientes/list?nome="+nome);
+        URL url = new URL("http://localhost:8081/clientes?nome="+nome);
         URLConnection urlConnection = url.openConnection();
 
         urlConnection.setDoOutput(true); // if you need to write to the URL

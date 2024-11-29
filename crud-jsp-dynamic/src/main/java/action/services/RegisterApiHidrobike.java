@@ -14,6 +14,7 @@ import java.net.URL;
 public class RegisterApiHidrobike {
 
     public void register(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	System.out.println("rota do registro de usuarios");
         try {
             // URL da API
             URL url = new URL("http://localhost:8081/auth/register");
@@ -29,6 +30,9 @@ public class RegisterApiHidrobike {
             usuario.setLogin(req.getParameter("login"));
             usuario.setPassword(req.getParameter("password"));
             usuario.setRole(role);
+
+            System.out.println("usuario "+usuario.toString());
+            System.out.println("role "+usuario.getRole());
 
 
 
@@ -79,17 +83,18 @@ public class RegisterApiHidrobike {
            // System.out.println(tokenObj.getToken());
             in.close();
             
-            if(responseCode==200){
-                req.setAttribute("mensagem","Insira dados válidos!");
-                //resp.getWriter().write("Cadastrado com sucesso!");
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/api/api-login.jsp");
-                dispatcher.forward(req, resp);
-            }else {
-            	  req.setAttribute("mensagem","Insira dados válidos!");
-                  //resp.getWriter().write("Cadastrado com sucesso!");
-                  RequestDispatcher dispatcher = req.getRequestDispatcher("/api/api-register.jsp");
-                  dispatcher.forward(req, resp);
+            if (200 <= responseCode && responseCode <= 299) {
+            	 req.setAttribute("mensagem","Cadastrado com sucesso!");
+                 //resp.getWriter().write("Cadastrado com sucesso!");
+                 RequestDispatcher dispatcher = req.getRequestDispatcher("/api/api-cadastrar-usuario.jsp");
+                 dispatcher.forward(req, resp);
+            } else {
+            	 req.setAttribute("mensagem","Problemas ao cadastrar usuário!");
+                 //resp.getWriter().write("Cadastrado com sucesso!");
+                 RequestDispatcher dispatcher = req.getRequestDispatcher("/api/api-cadastrar-usuario.jsp");
+                 dispatcher.forward(req, resp);
             }
+        
 
         } catch (Exception e) {
             e.printStackTrace();

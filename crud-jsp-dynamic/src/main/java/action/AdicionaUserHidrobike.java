@@ -30,7 +30,7 @@ public class AdicionaUserHidrobike  {
        // new UsuarioDao().salvar(usuario);
         req.setAttribute("msg","Cadastrado com sucesso!");
         // resp.getWriter().write("Cadastrado com sucesso!");
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/register-users-api.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("api/registerUsersApiHidrobike.jsp");
         dispatcher.forward(req, resp);
     }
 }

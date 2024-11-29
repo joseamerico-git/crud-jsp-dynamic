@@ -24,7 +24,7 @@ public class HidroBikeApi {
             req.setAttribute("token", req.getParameter("token"));
             req.setAttribute("login", req.getParameter("login"));
 
-            URL url = new URL("http://localhost:8081/clientes");
+            URL url = new URL("http://localhost:8081/clientes?nome=");
             URLConnection urlConnection = url.openConnection();
 
             urlConnection.setDoOutput(true); // if you need to write to the URL

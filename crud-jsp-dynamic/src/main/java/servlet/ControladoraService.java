@@ -53,7 +53,13 @@ public class ControladoraService extends HttpServlet {
             new Authentication().doPost(req, resp);
         } else if (acao.equals("auth/register")) {
             new RegisterApiHidrobike().register(req,resp);
-        } else if (acao.equals("auth/login")) {
+        } 
+        
+        else if (acao.equals("recuperar/senha")) {
+
+           // new RecuperarSenha().enviarEmail(req, resp);
+        }
+        else if (acao.equals("auth/login")) {
 
             new LoginApiHidrobike().doPost(req, resp);
         } else if (acao.equals("imprimir")) {

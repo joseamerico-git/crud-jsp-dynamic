@@ -19,6 +19,9 @@
 
 			<button id="btnLoginApi" name="btnLoginApi" type="submit"
 				class="btn btn-primary">Login normal</button>
+				
+				<a href="${pageContext.request.contextPath}/api/api-cadastrar-usuario.jsp">Registrar</a>
+				<a href="${pageContext.request.contextPath}/api/api-recuperar-senha.jsp">Esqueci minha senha</a>
 
 		</form>
 	</fieldset>

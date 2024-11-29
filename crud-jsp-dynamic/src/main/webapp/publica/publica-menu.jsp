@@ -65,7 +65,7 @@
 			}
 		</script>
 		</c:if>
-		<a class="fcc-btn" href="adiciona-usuarios.jsp">Adicionar um novo
+		<a class="fcc-btn" href="api/api-cadastrar-usuario.jsp">Adicionar um novo
 			usuário</a> 
 			<a class="fcc-btn" 
 			href="listar-usuarios.jsp">Listar

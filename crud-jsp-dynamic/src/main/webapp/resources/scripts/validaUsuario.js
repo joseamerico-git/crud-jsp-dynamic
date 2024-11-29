@@ -38,6 +38,7 @@ function valida() {
     let password1 = document.forms["meu-form"]["password1"].value;
     let spinner = document.getElementById("spinner");
     let btnSalvar =  document.forms["meu-form"]["btn-salvar"]
+	let btn_register =  document.forms["meu-form"]["btn_register"]
     let btn =  document.forms["meu-form"]["btn"]
 
 
@@ -76,7 +77,7 @@ function valida() {
 
     else if (password === password1) {
       
-        document.getElementById("img-confirm").src = "./imagens/chck.png";
+        document.getElementById("img-confirm").src = "../resources/imagens/chck.png";
         form.login.style.cssText = "border:solid 1px green;";
         form.password.style.cssText = "border:solid 1px green;";
         form.password1.style.cssText = "border:solid 1px green;";
@@ -98,6 +99,14 @@ function valida() {
             form.action = "controladora?action=AdicionaUsuario";
 
         })
+		
+		btn_register.addEventListener("click", (e) => {
+		          form.action = `controladora?acao=auth/register&ilogin=${login}&role=${role}`;
+
+		     })
+			
+		
+		
 
 
         

@@ -7,7 +7,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>Crud Servlets e JSP</title>
-    <link rel="icon" href="imagens/icon.webp">
+    <jsp:include page="/publica/publica-estilos.jsp" />
+    <jsp:include page="/publica/publica-icon.jsp" />
 
 </head>
 
@@ -15,24 +16,10 @@
 
     <div class="container">
 ${login}
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="#">O que fazemos?</a>
-                    <ul>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">SEO</a></li>
-                        <li><a href="#">Design</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
+         <jsp:include page="/publica/publica-nav.jsp" />
 
         <div class="div-menu">
-            <div class="div_img"><img src="./imagens/icon.webp"></div>
+              <jsp:include page="/publica/publica-logo.jsp" />
 
             <div class="op">
 
